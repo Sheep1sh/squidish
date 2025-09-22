@@ -1,0 +1,133 @@
+:root {
+    /* --text: #f3f3f3; */
+    --text: oklch(0.75 0.145 67.748);
+    --background: #222;
+    /* --overlay: rgb(150,150,150); */
+    --overlay: var(--background);
+
+    --row-min-h: 60vh;
+    --hero-height: 95vh;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    height: var(--hero-height);
+    background: url("https://picsum.photos/1600/900") no-repeat center center/cover;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.navbar .logo {
+    margin: 0 1.25rem;
+    font-size: 1.5rem;
+}
+
+.navbar nav {
+    display: flex;
+}
+
+.navbar nav a {
+    /* border: 2px solid green; */
+    padding: 1rem 1.25rem;
+    /* display: inline-block; */
+    transition: color 0.05s ease-in; 
+}
+
+.navbar nav a:link, a:visited {
+    color: var(--text);
+}
+
+.navbar nav a:hover, a:active {
+    color: var(--overlay);
+}
+
+.hero h1 {
+    margin: auto 0;
+    padding: 0 8%;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.header-peek {
+    display: flex;
+    height: calc(100 - var(--hero-height));
+    flex-direction: column;
+    justify-content: space-between;
+    place-items: center;
+    margin: auto 0;
+}
+
+#title {
+    text-align: center;
+}
+
+.container {
+    padding: 3rem 8%;
+}
+
+.img-container {
+    position: relative;
+    display: grid;
+    background: red;
+    grid-template-areas: "stack";
+    place-items: center;
+}
+
+.img-container > * {
+    grid-area: stack;
+}
+
+.img-container .bg {
+    z-index: 1;
+    width: 100vw;
+}
+
+.img-container .content {
+    z-index: 2;
+}
+
+footer {
+    display: grid;
+    place-items: center;
+}
+
+footer hr {
+    margin-bottom: 2rem;
+    border: none;
+    border-top: 2px solid #354f52;
+    min-width: 90%;
+}
+
+footer p {
+    padding: 1rem 1.25rem;
+    text-align: center;
+    max-width: 70%;
+}
