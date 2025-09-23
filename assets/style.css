@@ -1,9 +1,8 @@
 :root {
-    --text: oklch(0.75 0.145 67.748);
+    --text: oklch(0.65 0.136 45);
     --background: #222;
     --overlay: var(--background);
 
-    --row-min-h: 60vh;
     --hero-height: 95vh;
 }
 
@@ -19,9 +18,41 @@ body {
     font-family: "Noticia Text", serif;
 }
 
+img {
+    pointer-events: none;
+}
+
 a {
     text-decoration: none;
 }
+
+/*========== UTILITY ==========*/
+
+.container {
+    padding: 3rem 8%;
+}
+
+.img-container {
+    position: relative;
+    display: grid;
+    grid-template-areas: "stack";
+    place-items: center;
+}
+
+.img-container > * {
+    grid-area: stack;
+}
+
+.img-container .bg {
+    z-index: 1;
+    width: 100vw;
+}
+
+.img-container .content {
+    z-index: 2;
+}
+
+/*========== HEADER ==========*/
 
 header {
       height: 100vh;
@@ -30,59 +61,60 @@ header {
       position: relative;
 }
 
-.hero {
+header .hero {
     display: flex;
     flex-direction: column;
     height: var(--hero-height);
     background: url("https://picsum.photos/1600/900") no-repeat center center/cover;
 }
 
-.navbar {
+header .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
 }
 
-.navbar .logo {
+header .navbar .logo {
     margin: 0 1.25rem;
     font-size: 1.5rem;
 }
 
-.navbar .logo a:link,
-.navbar .logo a:visited {
+header .navbar .logo a:link,
+header .navbar .logo a:visited {
     color: var(--text);
 }
 
-.navbar nav {
+header .navbar nav {
     display: flex;
+    font-size: 1.2rem;
 }
 
-.navbar nav a {
+header .navbar nav a {
     /* border: 2px solid green; */
     padding: 1rem 1.25rem;
     /* display: inline-block; */
     transition: color 0.05s ease-in; 
 }
 
-.navbar nav a:link,
-.navbar nav a:visited {
+header .navbar nav a:link,
+header .navbar nav a:visited {
     color: var(--text);
 }
 
-.navbar nav a:hover,
-.navbar nav a:active {
+header .navbar nav a:hover,
+header .navbar nav a:active {
     color: var(--overlay);
 }
 
-.hero h1 {
+header .hero h1 {
     margin: auto 0;
     padding: 0 8%;
     text-align: center;
     font-size: 3rem;
 }
 
-.header-peek {
+header .header-peek {
     display: flex;
     height: calc(100 - var(--hero-height));
     flex-direction: column;
@@ -90,6 +122,8 @@ header {
     place-items: center;
     margin: auto 0;
 }
+
+/*========== INDEX.html ==========*/
 
 #call-to-action {
     text-align: center;
@@ -128,69 +162,66 @@ header {
   opacity: .5;
 }
 
-.container {
-    padding: 3rem 8%;
+
+/*========== ABOUT.html ==========*/
+
+#biography {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
 }
 
-.img-container {
-    position: relative;
-    display: grid;
-    grid-template-areas: "stack";
-    place-items: center;
+#biography img {
+    max-height: 90vh;
+    min-width: 20vw;
+    border-radius: 16px;
 }
 
-.img-container > * {
-    grid-area: stack;
+#biography .bio-content{
+    flex: 1;
+    min-width: min(25rem, 50vw);
 }
 
-.img-container .bg {
-    z-index: 1;
-    width: 100vw;
+#biography h2 {
+    font-size: 4rem;
+    font-weight: 700;
 }
 
-.img-container .content {
-    z-index: 2;
+#biography p {
+    font-family: "Roboto", sans-serif;
 }
+
+/*========== FOOTER ==========*/
 
 footer {
     display: grid;
     place-items: center;
 }
 
-#social-icons {
+footer #social-icons {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
 }
 
-.youtube-icon {
-    stroke: var(--text);
-    height: 50px;
-    width: auto;
-}
-
-.youtube-icon:hover {
+footer #social-icons > *:hover {
     transform: scale(1.1);
 }
 
-.instagram-icon {
+footer .youtube-icon {
     height: 50px;
-    width: auto;
 }
 
-.instagram-icon:hover {
-    transform: scale(1.1);
+footer .instagram-icon {
+    height: 50px;
 }
 
-.linkedin-icon {
+footer .linkedin-icon {
     height: 36px;
     padding: 7px 0; /* keep the link area the same size as the others */
-    width: auto;
-}
-
-.linkedin-icon:hover {
-    transform: scale(1.1);
 }
 
 footer hr {
