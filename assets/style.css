@@ -1,8 +1,6 @@
 :root {
-    /* --text: #f3f3f3; */
     --text: oklch(0.75 0.145 67.748);
     --background: #222;
-    /* --overlay: rgb(150,150,150); */
     --overlay: var(--background);
 
     --row-min-h: 60vh;
@@ -18,6 +16,7 @@ body {
     background: var(--background);
     color: var(--text);
     overflow-x: hidden;
+    font-family: "Noticia Text", serif;
 }
 
 a {
@@ -50,6 +49,11 @@ header {
     font-size: 1.5rem;
 }
 
+.navbar .logo a:link,
+.navbar .logo a:visited {
+    color: var(--text);
+}
+
 .navbar nav {
     display: flex;
 }
@@ -61,11 +65,13 @@ header {
     transition: color 0.05s ease-in; 
 }
 
-.navbar nav a:link, a:visited {
+.navbar nav a:link,
+.navbar nav a:visited {
     color: var(--text);
 }
 
-.navbar nav a:hover, a:active {
+.navbar nav a:hover,
+.navbar nav a:active {
     color: var(--overlay);
 }
 
@@ -85,8 +91,41 @@ header {
     margin: auto 0;
 }
 
-#title {
+#call-to-action {
     text-align: center;
+}
+
+#explore-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+    padding: auto 0;
+}
+.explore-btn {
+    background: var(--text);
+    border: 2px solid var(--text);
+    border-radius: 6px;
+    color: var(--background);
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    padding: 10vh 5.5rem;
+    flex: 1;
+    text-align: center;
+}
+
+.explore-btn:hover,
+.explore-btn:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: var(--text);
+}
+
+.explore-btn:active {
+  opacity: .5;
 }
 
 .container {
@@ -96,7 +135,6 @@ header {
 .img-container {
     position: relative;
     display: grid;
-    background: red;
     grid-template-areas: "stack";
     place-items: center;
 }
@@ -119,10 +157,46 @@ footer {
     place-items: center;
 }
 
+#social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.youtube-icon {
+    stroke: var(--text);
+    height: 50px;
+    width: auto;
+}
+
+.youtube-icon:hover {
+    transform: scale(1.1);
+}
+
+.instagram-icon {
+    height: 50px;
+    width: auto;
+}
+
+.instagram-icon:hover {
+    transform: scale(1.1);
+}
+
+.linkedin-icon {
+    height: 36px;
+    padding: 7px 0; /* keep the link area the same size as the others */
+    width: auto;
+}
+
+.linkedin-icon:hover {
+    transform: scale(1.1);
+}
+
 footer hr {
     margin-bottom: 2rem;
     border: none;
-    border-top: 2px solid #354f52;
+    border-top: 2px solid var(--text);
     min-width: 90%;
 }
 
