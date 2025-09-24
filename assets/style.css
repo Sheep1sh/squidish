@@ -7,11 +7,15 @@
 }
 
 * {
+    padding: 0;
     margin: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    margin: 0;
     background: var(--background);
     color: var(--text);
     overflow-x: hidden;
@@ -191,6 +195,22 @@ header .header-peek {
 
 #biography p {
     font-family: "Roboto", sans-serif;
+}
+
+/*========== Portfolio.html ==========*/
+
+.photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+.photo-grid img {
+    border-radius: 6px;
+    max-height: 95vh;
+    max-width: 100vw;
 }
 
 /*========== FOOTER ==========*/
